@@ -1,16 +1,4 @@
-
-<div class="table-responsive">
-
-<!--{{collection | json}}-->
-
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col" *ngFor="let item of headers">{{item}}</th>
-    </tr>
-  </thead>
-  <tbody>
+<app-table-dark [headers]="headers">
     <tr *ngFor="let item of collection$ | async">
       <td>{{item.typePresta}}</td>
       <td>{{item.client}}</td>
@@ -28,13 +16,6 @@
         </select>
       </td>
     </tr>
- </tbody>
 
+</app-table-dark>
 
-</table>
-
-
-
-
-
-</div>

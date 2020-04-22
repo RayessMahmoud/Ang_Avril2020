@@ -16,7 +16,7 @@
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "Confirmé",
+      "state": "Annulé",
       "comment": "merci cap",
       "id": 2
     },
@@ -26,7 +26,7 @@
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "Confirmé",
+      "state": "Option",
       "comment": "merci edugroupe",
       "id": 3
     }
