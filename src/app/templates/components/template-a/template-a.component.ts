@@ -16,3 +16,4 @@ export class TemplateAComponent implements OnInit {
   }
 
 }
+
