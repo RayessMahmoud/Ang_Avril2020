@@ -49,8 +49,10 @@ export class OrdersService {
     return this.http.put<Order>(`${this.urlApi}orders/${item.id}`, item);
   }
 
-
-
+//Add Item
+public add(item: Order): Observable<Order> {
+  return this.http.post<Order>(`${this.urlApi}orders`, item);
+}
 
 
 }
