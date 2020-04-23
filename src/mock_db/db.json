@@ -7,7 +7,7 @@
       "tjmHt": 1200,
       "nbJours": 10,
       "tva": 20,
-      "state": "Annulé",
+      "state": "Confirmé",
       "comment": "Merci Modis pour les 1.2k jour"
     },
     {
@@ -16,7 +16,7 @@
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "Annulé",
+      "state": "Option",
       "comment": "merci cap",
       "id": 2
     },
@@ -26,7 +26,7 @@
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "Option",
+      "state": "Confirmé",
       "comment": "merci edugroupe",
       "id": 3
     }
