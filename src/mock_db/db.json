@@ -42,13 +42,13 @@
       "id": 2,
       "name": "Mahmoud",
       "email": "momo@gmail.com",
-      "state": "Actif"
+      "state": "Confirmé"
     },
     {
       "id": 3,
       "name": "Jeam-Marie",
       "email": "jm@gmail.com",
-      "state": "Actif"
+      "state": "Annulé"
     }
   ]
 }

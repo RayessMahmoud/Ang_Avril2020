@@ -1,1 +1,25 @@
-<p>page-list-clients works!</p>
+<app-template-b [title]="title" [subtitle]="subtitle">
+
+  <app-table-dark [headers]="headers">
+    <tr *ngFor="let item of collection$ | async">
+      <td>{{item.name}}</td>
+      <td>{{item.email}}</td>
+      <td [appState]="item.state">
+        <!-- <td [ngClass]="{'state-annule': item.state === 'Annulé','state-annule': item.state === 'Annulé','state-option': item.state === 'option','state-confirme': item.state === 'Confirmé'}">-->
+        <select (change)="changeState(item, $event)">
+          <option *ngFor="let state of states" [value]="state" [selected]="state === item.state">{{state}}</option>
+          <!-- <option value="Option"></option>
+          <option value="Annuler"></option>
+          <option value="Confirmé"></option>-->
+        </select>
+      </td>
+    </tr>
+
+  </app-table-dark>
+
+  <app-btn [label]="btnRoute.label" [route]="btnRoute.route"></app-btn>
+<app-btn [label]="btnHref.label" [href]="btnHref.href"></app-btn>
+
+  <app-btn [label]="btnAction.label" [action]="btnAction.action" (clicked)="action()"></app-btn>
+
+</app-template-b>

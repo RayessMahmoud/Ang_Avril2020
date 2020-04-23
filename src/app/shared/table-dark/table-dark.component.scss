@@ -1,9 +1,9 @@
 @import 'theme';
 #table-dark {
-  .state-annule {
+  .state-annule, .state-inactif {
     background: $color-error;
   }
-  .state-confirme {
+  .state-confirme, .state-actif {
     background: $color-success;
   }
   .state-option {
