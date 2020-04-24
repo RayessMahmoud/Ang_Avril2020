@@ -26,39 +26,39 @@
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "Confirmé",
+      "state": "Annulé",
       "comment": "merci edugroupe",
       "id": 3
     },
     {
       "id": 4,
-      "typePresta": "t1",
-      "client": "c1",
-      "tjmHt": 1,
-      "nbJours": 1,
-      "tva": 1,
-      "state": "Annulé",
-      "comment": "cmt1"
+      "typePresta": "t2",
+      "client": "C2",
+      "tjmHt": 2,
+      "nbJours": 2,
+      "tva": 2,
+      "state": "Option",
+      "comment": "cmt2"
     }
   ],
   "clients": [
     {
+      "state": "Actif",
       "id": 1,
       "name": "Christophe",
-      "email": "christophe@gmail.com",
-      "state": "Actif"
+      "email": "christophe@gmail.com"
     },
     {
+      "state": "Actif",
       "id": 2,
       "name": "Mahmoud",
-      "email": "momo@gmail.com",
-      "state": "Confirmé"
+      "email": "momo@gmail.com"
     },
     {
+      "state": "Actif",
       "id": 3,
       "name": "Jeam-Marie",
-      "email": "jm@gmail.com",
-      "state": "Annulé"
+      "email": "jm@gmail.com"
     }
   ]
 }

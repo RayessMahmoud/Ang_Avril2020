@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IconDelComponent } from './icon-del.component';
+import { OrderCommentComponent } from './order-comment.component';
 
-describe('IconDelComponent', () => {
-  let component: IconDelComponent;
-  let fixture: ComponentFixture<IconDelComponent>;
+describe('OrderCommentComponent', () => {
+  let component: OrderCommentComponent;
+  let fixture: ComponentFixture<OrderCommentComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IconDelComponent ]
+      declarations: [ OrderCommentComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IconDelComponent);
+    fixture = TestBed.createComponent(OrderCommentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,7 +1,7 @@
 <app-template-a [title]="title" [subtitle]="subtitle">
 
   <app-table-light [headers]="headers">
-    <tr *ngFor="let item of collection$ | async">
+    <tr *ngFor="let item of collection$ | async" (click)="detail(item)">
       <td>{{item.typePresta}}</td>
       <td>{{item.client}}</td>
       <td>{{item.nbJours}}</td>
@@ -10,16 +10,20 @@
       <td>{{item | total : 'ttc' | currency: 'EUR'}}</td>
       <td [appState]="item.state">
         <!-- <td [ngClass]="{'state-annule': item.state === 'Annulé','state-annule': item.state === 'Annulé','state-option': item.state === 'option','state-confirme': item.state === 'Confirmé'}">-->
-        <select (change)="changeState(item, $event)">
+        <select (change)="changeState(item, $event)" (click)="$event.stopPropagation()">
           <option *ngFor="let state of states" [value]="state" [selected]="state === item.state">{{state}}</option>
           <!-- <option value="Option"></option>
           <option value="Annuler"></option>
           <option value="Confirmé"></option>-->
         </select>
       </td>
+
+
       <td>
         <app-delete (click)="delete(item)"></app-delete>
+        <app-edit (click)="edit(item)"></app-edit>
       </td>
+
     </tr>
 
   </app-table-light>
@@ -28,4 +32,13 @@
   <app-btn [label]="btnHref.label" [href]="btnHref.href"></app-btn>
   <app-btn [label]="btnAction.label" [action]="btnAction.action" (clicked)="action()"></app-btn>
 
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="detail" routerLinkActive='active'>Détail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="comment" routerLinkActive='active'>Comment</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
 </app-template-a>
