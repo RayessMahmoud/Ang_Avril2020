@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../../services/orders.service';
 import { Order } from 'src/app/shared/models/order';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { StatesOrder } from 'src/app/shared/enums/states-order.enum';
 import { Btn } from 'src/app/shared/interfaces/btn';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -14,7 +15,7 @@ export class PageListOrdersComponent implements OnInit {
   //public collection$: Order[];
 
 
-  public collection$: Observable<Order[]>;
+  public collection$ = new Subject<Order[]>();
   public headers: string[];
   public title: string;
   public subtitle: string;
@@ -22,15 +23,23 @@ export class PageListOrdersComponent implements OnInit {
   public btnHref: Btn;
   public btnAction: Btn;
   public states = Object.values(StatesOrder);
-  constructor(private os: OrdersService) { }
+  constructor(private os: OrdersService, private route: ActivatedRoute) { }
   ngOnInit(): void {
     //this.os.collection.subscribe((datas) => {
     ////console.log(datas);
     //this.collection = datas;
     //});
-    this.collection$ = this.os.collection;
-    this.title = "Orders";
-    this.subtitle = "All Orders";
+    this.route.data.subscribe((datas) => {
+      console.log(datas);
+      this.title = datas.title;
+      this.subtitle = datas.subtitle;
+    });
+    this.os.collection.subscribe((datas) => {
+      this.collection$.next(datas);
+    })
+    //this.collection$ = this.os.collection;
+    //this.title = "Orders";
+    //this.subtitle = "All Orders";
     this.btnRoute = { label: 'Add an Order', route: 'add' };
     this.btnHref = { label: 'Search on Google', href: 'http://www.google.fr' };
     this.btnAction = { label: 'Click me', action: 'true' };
@@ -41,7 +50,8 @@ export class PageListOrdersComponent implements OnInit {
       'TjmHT',
       'total HT',
       'Total TTC',
-      'State'
+      'State',
+      'Action'
     ];
   }
 
@@ -55,6 +65,13 @@ export class PageListOrdersComponent implements OnInit {
     console.log('action called');
   }
 
+  public delete(item) {
+    this.os.delete(item.id).subscribe((res) => {
+      this.os.collection.subscribe((datas) => {
+        this.collection$.next(datas);
+      });
+    });
+  }
 
 }
 

@@ -55,4 +55,8 @@ public add(item: Order): Observable<Order> {
 }
 
 
+public delete(id: string): Observable<Order> {
+  return this.http.delete<Order>(`${this.urlApi}orders/${id}`);
+}
+
 }

@@ -7,16 +7,18 @@ import { TableDarkComponent } from './table-dark/table-dark.component';
 import { TemplatesModule } from '../templates/templates.module';
 import { BtnComponent } from './components/btn/btn.component';
 import { RouterModule } from '@angular/router';
+import { IconsModule } from '../icons/icons.module';
 
 
 
 @NgModule({
   declarations: [TotalPipe, StateDirective, TableLightComponent, TableDarkComponent, BtnComponent],
-  exports: [TotalPipe, StateDirective, TableLightComponent, TableDarkComponent,TemplatesModule, BtnComponent],
+  exports: [TotalPipe, StateDirective, TableLightComponent, TableDarkComponent, TemplatesModule, BtnComponent, IconsModule],
   imports: [
     CommonModule,
     TemplatesModule,
-    RouterModule
+    RouterModule,
+    IconsModule
   ]
 })
 export class SharedModule { }
