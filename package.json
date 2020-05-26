@@ -8,8 +8,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "generateDoc": "compodoc -p tsconfig.json -s -o"
+    "generateDoc": "compodoc -p tsconfig.json -s -o",
+    "api": "json-server src/mock_db/db.json"
   },
+
+
+
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.1",
