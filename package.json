@@ -9,11 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "generateDoc": "compodoc -p tsconfig.json -s -o",
+    "analyzeBundle": "ng build --prod --stats-json && webpack-bundle-analyzer dist/crm-m2i-mai/stats-es2015.json",
     "api": "json-server src/mock_db/db.json"
   },
-
-
-
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.1",
@@ -33,6 +31,8 @@
     "@ng-bootstrap/ng-bootstrap": "^6.0.3",
     "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
     "bootstrap": "^4.0.0",
+    "dayjs": "^1.8.27",
+    "moment": "^2.26.0",
     "rxjs": "~6.5.4",
     "sass-loader": "^8.0.2",
     "tslib": "^1.10.0",
