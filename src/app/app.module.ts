@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import localeFrExtra from '@angular/common/locales/extra/fr';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
@@ -26,7 +28,8 @@ registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
     CoreModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent]
