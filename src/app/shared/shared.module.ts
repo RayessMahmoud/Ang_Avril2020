@@ -8,12 +8,13 @@ import { TemplatesModule } from '../templates/templates.module';
 import { BtnComponent } from './components/btn/btn.component';
 import { RouterModule } from '@angular/router';
 import { IconsModule } from '../icons/icons.module';
+import { DbComponent } from './components/db/db.component';
 
 
 
 @NgModule({
-  declarations: [TotalPipe, StateDirective, TableLightComponent, TableDarkComponent, BtnComponent],
-  exports: [TotalPipe, StateDirective, TableLightComponent, TableDarkComponent, TemplatesModule, BtnComponent, IconsModule],
+  declarations: [TotalPipe, StateDirective, TableLightComponent, TableDarkComponent, BtnComponent, DbComponent],
+  exports: [TotalPipe, StateDirective, TableLightComponent, TableDarkComponent, TemplatesModule, BtnComponent, IconsModule, DbComponent],
   imports: [
     CommonModule,
     TemplatesModule,

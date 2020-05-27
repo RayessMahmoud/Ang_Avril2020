@@ -8,6 +8,7 @@ import * as moment from 'moment';
 export class FooterComponent implements OnInit {
   Date = moment();
 
+
   constructor() { }
 
   ngOnInit(): void {
