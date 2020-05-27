@@ -17,4 +17,5 @@ export class FooterComponent implements OnInit {
   vibrate(){
     navigator.vibrate( [500,500,500,500] );
   }
+
 }
